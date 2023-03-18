@@ -11,9 +11,6 @@ jobs:
     strategy:
       matrix:
         vars:
-        - GITHUB_REF_NAME
-        - GITHUB_REF_PROTECTED
-        - GITHUB_REPOSITORY_OWNER_ID
         - ${{github.repository_owner_id}}
         - ${{ github.run_id }}
     runs-on: "ubuntu-latest"
@@ -21,5 +18,3 @@ jobs:
     - name: Printall
       run: |
         echo ${{ matrix.vars }}
-        echo $${{ matrix.vars }}`
-
