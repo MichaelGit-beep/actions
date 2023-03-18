@@ -1,0 +1,15 @@
+name: Debug
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - "*"
+jobs:
+  prints:
+    runs-on: "ubuntu-latest"
+  steps:
+  - name: Printall
+    run: |
+      echo ${{ github.event_name }}
