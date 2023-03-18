@@ -21,4 +21,5 @@ jobs:
     - name: Printall
       run: |
         echo ${{ matrix.vars }}
+        echo $`${{ matrix.vars }}`
 
