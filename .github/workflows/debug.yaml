@@ -11,8 +11,9 @@ jobs:
     strategy:
       matrix:
         vars:
-        - ${{github.repository_owner_id}}
+        - ${{ github.repository_owner_id }}
         - ${{ github.run_id }}
+        - ${{ github.action }}
     runs-on: "ubuntu-latest"
     steps:
     - name: Printall
