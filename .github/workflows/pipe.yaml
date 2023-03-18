@@ -42,6 +42,16 @@ jobs:
         run: |
           chmod +x test.sh
           ./test.sh
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Docker build and push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: akicontport/gorunner:latest
   tests:
     # Override default paraller jobs execution bu adding "needs" instruction
     needs: ["build"]
