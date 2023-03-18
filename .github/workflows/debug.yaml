@@ -13,3 +13,4 @@ jobs:
     - name: Printall
       run: |
         echo ${{ github.event_name }}
+        echo $GITHUB_EVENT_NAME
