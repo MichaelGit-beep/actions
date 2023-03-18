@@ -18,8 +18,11 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
+    runs-on: ${{matrix.os}}
+    # Run job on multiple OS
+    strategy:
+      matrix:
+        os: ["ubuntu-latest", "ubuntu-22.04"]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -39,3 +42,10 @@ jobs:
         run: |
           chmod +x test.sh
           ./test.sh
+  tests:
+    # Override default paraller jobs execution bu adding "needs" instruction
+    needs: ["build"]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run test 1
+      run: echo test 1
