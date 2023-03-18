@@ -22,7 +22,7 @@ jobs:
     # Run job on multiple OS
     strategy:
       matrix:
-        os: ["ubuntu-lates", "ubuntu-22.04"]
+        os: ["ubuntu-latest", "ubuntu-22.04"]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
