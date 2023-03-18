@@ -19,4 +19,4 @@ jobs:
     - name: Printall
       run: |
         echo ${{ matrix.vars }}
-        ehco $GITHUB_ACTION
+        echo $GITHUB_ACTION
