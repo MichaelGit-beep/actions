@@ -47,3 +47,5 @@ jobs:
     needs: ["build"]
       runs-on: ubuntu-latest
       steps:
+      - name: Run test 1
+        run: echo test 1
